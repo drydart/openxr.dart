@@ -5,5 +5,7 @@ import 'package:test/test.dart';
 import 'package:openxr/openxr.dart' as openxr;
 
 void main() {
-  // TODO
+  test('checks XR_SUCCESS', () {
+    expect(openxr.XR_SUCCESS, 0);
+  });
 }

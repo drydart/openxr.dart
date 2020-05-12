@@ -1,6 +1,6 @@
 # See: https://dart.dev/tools/pub/pubspec
 name: openxr
-version: 0.0.3
+version: 0.0.4
 description: >-
   OpenXR.dart implements Dart bindings for OpenXR 1.0, the open standard and
   cross-platform API for virtual reality (VR) and augmented reality (AR)

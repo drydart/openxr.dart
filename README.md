@@ -23,3 +23,10 @@ Prerequisites
 - [Dart](https://dart.dev) 2.8.1+
 
 - [OpenXR SDK](https://github.com/KhronosGroup/OpenXR-SDK) 1.0.8+
+
+Examples
+--------
+
+### Importing the library
+
+    import 'package:openxr/openxr.dart' as xr;

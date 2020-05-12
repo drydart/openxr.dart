@@ -1,7 +1,7 @@
 /* This is free and unencumbered software released into the public domain. */
 
 abstract class XrResult {
-  XrResult._() {}
+  XrResult._();
   static const XR_SUCCESS = 0;
   static const XR_TIMEOUT_EXPIRED = 1;
   static const XR_SESSION_LOSS_PENDING = 3;
@@ -62,7 +62,7 @@ abstract class XrResult {
 }
 
 abstract class XrStructureType {
-  XrStructureType._() {}
+  XrStructureType._();
   static const XR_TYPE_UNKNOWN = 0;
   static const XR_TYPE_API_LAYER_PROPERTIES = 1;
   static const XR_TYPE_EXTENSION_PROPERTIES = 2;

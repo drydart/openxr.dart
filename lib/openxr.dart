@@ -1,5 +1,6 @@
 /* This is free and unencumbered software released into the public domain. */
 
+/// OpenXR bindings for Dart and Flutter.
 library openxr;
 
 export 'src/abi.dart';

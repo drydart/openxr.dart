@@ -9,3 +9,7 @@
 .packages
 build/
 pubspec.lock
+
+# OpenXR loader symlinks
+libopenxr_loader.dylib
+libopenxr_loader.so

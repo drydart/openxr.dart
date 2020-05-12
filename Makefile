@@ -2,7 +2,7 @@ PANDOC ?= pandoc
 PUB    ?= pub
 
 check:
-	$(PUB) run test
+	$(PUB) run test -r expanded
 
 .PHONY: check
 .SECONDARY:

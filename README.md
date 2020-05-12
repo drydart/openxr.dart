@@ -30,3 +30,24 @@ Examples
 ### Importing the library
 
     import 'package:openxr/openxr.dart' as xr;
+
+Development
+-----------
+
+We recommend Debian 11 (aka [Bullseye](https://www.debian.org/releases/bullseye/))
+as a development environment. If you're on a Mac, you can run Debian in a
+virtual machine using [VMware Fusion](https://www.vmware.com/products/fusion.html)
+or [VirtualBox](https://www.virtualbox.org).
+
+Install the Debian packages for the OpenXR SDK's loader as follows:
+
+    $ apt install libopenxr-loader1
+
+That's the only required package, but find related packages of interest using:
+
+    $ apt search openxr
+
+In addition, you _will_ need an OpenXR runtime for your hardware. In the
+absence of suitable vendor-supplied runtimes, have a look at the open-source
+[Monado](https://monado.freedesktop.org) project which supports many common
+devices.

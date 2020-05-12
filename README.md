@@ -15,7 +15,7 @@ Installation
 ------------
 
     dependencies:
-      openxr: ^0.0.1
+      openxr: ^0.0.2
 
 Prerequisites
 -------------

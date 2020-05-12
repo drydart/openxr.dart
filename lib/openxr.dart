@@ -4,16 +4,16 @@ library openxr;
 
 export 'src/abi.dart';
 export 'src/api.dart';
-
-export 'src/action.dart';
-export 'src/action_set.dart';
-export 'src/extension.dart';
-export 'src/handle.dart';
-export 'src/instance.dart';
-export 'src/layer.dart';
-export 'src/result.dart';
-export 'src/session.dart';
-export 'src/space.dart';
-export 'src/swapchain.dart';
-export 'src/system.dart';
 export 'src/version.dart';
+
+export 'src/action.dart' show Action;
+export 'src/action_set.dart' show ActionSet;
+export 'src/extension.dart' show Extension;
+export 'src/handle.dart' show Handle;
+export 'src/instance.dart' show Instance;
+export 'src/layer.dart' show Layer;
+export 'src/result.dart' show Result;
+export 'src/session.dart' show Session;
+export 'src/space.dart' show Space;
+export 'src/swapchain.dart' show Swapchain;
+export 'src/system.dart' show System;

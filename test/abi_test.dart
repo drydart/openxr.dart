@@ -2,10 +2,14 @@
 
 import 'package:test/test.dart';
 
-import 'package:openxr/openxr.dart' as openxr;
+import 'package:openxr/openxr.dart';
 
 void main() {
   test('checks XR_SUCCESS', () {
-    expect(openxr.XR_SUCCESS, 0);
+    expect(XrResult.XR_SUCCESS, 0);
+  });
+
+  test('checks XR_TYPE_UNKNOWN', () {
+    expect(XrStructureType.XR_TYPE_UNKNOWN, 0);
   });
 }

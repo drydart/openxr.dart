@@ -1,7 +1,158 @@
 /* This is free and unencumbered software released into the public domain. */
 
+import 'dart:ffi';
+
+abstract class XrActionType {
+  XrActionType._();
+
+  static const XR_ACTION_TYPE_BOOLEAN_INPUT = 1;
+  static const XR_ACTION_TYPE_FLOAT_INPUT = 2;
+  static const XR_ACTION_TYPE_VECTOR2F_INPUT = 3;
+  static const XR_ACTION_TYPE_POSE_INPUT = 4;
+  static const XR_ACTION_TYPE_VIBRATION_OUTPUT = 100;
+}
+
+/// Android Thread Types
+abstract class XrAndroidThreadTypeKHR {
+  XrAndroidThreadTypeKHR._();
+
+  static const XR_ANDROID_THREAD_TYPE_APPLICATION_MAIN_KHR = 1;
+  static const XR_ANDROID_THREAD_TYPE_APPLICATION_WORKER_KHR = 2;
+  static const XR_ANDROID_THREAD_TYPE_RENDERER_MAIN_KHR = 3;
+  static const XR_ANDROID_THREAD_TYPE_RENDERER_WORKER_KHR = 4;
+}
+
+abstract class XrCompositionLayerFlagBits {
+  XrCompositionLayerFlagBits._();
+
+  static const XR_COMPOSITION_LAYER_CORRECT_CHROMATIC_ABERRATION_BIT = 1;
+  static const XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT = 2;
+  static const XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT = 4;
+}
+
+abstract class XrDebugUtilsMessageSeverityFlagBitsEXT {
+  XrDebugUtilsMessageSeverityFlagBitsEXT._();
+
+  static const XR_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT = 1;
+  static const XR_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT = 16;
+  static const XR_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT = 256;
+  static const XR_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT = 4096;
+}
+
+abstract class XrDebugUtilsMessageTypeFlagBitsEXT {
+  XrDebugUtilsMessageTypeFlagBitsEXT._();
+
+  static const XR_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT = 1;
+  static const XR_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT = 2;
+  static const XR_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT = 4;
+  static const XR_DEBUG_UTILS_MESSAGE_TYPE_CONFORMANCE_BIT_EXT = 8;
+}
+
+abstract class XrEnvironmentBlendMode {
+  XrEnvironmentBlendMode._();
+
+  static const XR_ENVIRONMENT_BLEND_MODE_OPAQUE = 1;
+  static const XR_ENVIRONMENT_BLEND_MODE_ADDITIVE = 2;
+  static const XR_ENVIRONMENT_BLEND_MODE_ALPHA_BLEND = 3;
+}
+
+/// eye visibility selector
+abstract class XrEyeVisibility {
+  XrEyeVisibility._();
+
+  static const XR_EYE_VISIBILITY_BOTH = 0;
+  static const XR_EYE_VISIBILITY_LEFT = 1;
+  static const XR_EYE_VISIBILITY_RIGHT = 2;
+}
+
+abstract class XrFormFactor {
+  XrFormFactor._();
+
+  static const XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY = 1;
+  static const XR_FORM_FACTOR_HANDHELD_DISPLAY = 2;
+}
+
+abstract class XrInputSourceLocalizedNameFlagBits {
+  XrInputSourceLocalizedNameFlagBits._();
+
+  static const XR_INPUT_SOURCE_LOCALIZED_NAME_USER_PATH_BIT = 1;
+  static const XR_INPUT_SOURCE_LOCALIZED_NAME_INTERACTION_PROFILE_BIT = 2;
+  static const XR_INPUT_SOURCE_LOCALIZED_NAME_COMPONENT_BIT = 4;
+}
+
+abstract class XrInstanceCreateFlagBits {
+  XrInstanceCreateFlagBits._();
+}
+
+/// Enums to track objects of various types
+abstract class XrObjectType {
+  XrObjectType._();
+
+  static const XR_OBJECT_TYPE_UNKNOWN = 0;
+  static const XR_OBJECT_TYPE_INSTANCE = 1;
+  static const XR_OBJECT_TYPE_SESSION = 2;
+  static const XR_OBJECT_TYPE_SWAPCHAIN = 3;
+  static const XR_OBJECT_TYPE_SPACE = 4;
+  static const XR_OBJECT_TYPE_ACTION_SET = 5;
+  static const XR_OBJECT_TYPE_ACTION = 6;
+}
+
+abstract class XrOverlayMainSessionFlagBitsEXTX {
+  XrOverlayMainSessionFlagBitsEXTX._();
+
+  static const XR_OVERLAY_MAIN_SESSION_ENABLED_COMPOSITION_LAYER_INFO_DEPTH_BIT_EXTX = 1;
+}
+
+abstract class XrOverlaySessionCreateFlagBitsEXTX {
+  XrOverlaySessionCreateFlagBitsEXTX._();
+
+  static const XR_OVERLAY_SESSION_CREATE_RELAXED_DISPLAY_TIME_BIT_EXTX = 1;
+}
+
+abstract class XrPerfSettingsDomainEXT {
+  XrPerfSettingsDomainEXT._();
+
+  static const XR_PERF_SETTINGS_DOMAIN_CPU_EXT = 1;
+  static const XR_PERF_SETTINGS_DOMAIN_GPU_EXT = 2;
+}
+
+abstract class XrPerfSettingsLevelEXT {
+  XrPerfSettingsLevelEXT._();
+
+  static const XR_PERF_SETTINGS_LEVEL_POWER_SAVINGS_EXT = 0;
+  static const XR_PERF_SETTINGS_LEVEL_SUSTAINED_LOW_EXT = 25;
+  static const XR_PERF_SETTINGS_LEVEL_SUSTAINED_HIGH_EXT = 50;
+  static const XR_PERF_SETTINGS_LEVEL_BOOST_EXT = 75;
+}
+
+abstract class XrPerfSettingsNotificationLevelEXT {
+  XrPerfSettingsNotificationLevelEXT._();
+
+  static const XR_PERF_SETTINGS_NOTIF_LEVEL_NORMAL_EXT = 0;
+  static const XR_PERF_SETTINGS_NOTIF_LEVEL_WARNING_EXT = 25;
+  static const XR_PERF_SETTINGS_NOTIF_LEVEL_IMPAIRED_EXT = 75;
+}
+
+abstract class XrPerfSettingsSubDomainEXT {
+  XrPerfSettingsSubDomainEXT._();
+
+  static const XR_PERF_SETTINGS_SUB_DOMAIN_COMPOSITING_EXT = 1;
+  static const XR_PERF_SETTINGS_SUB_DOMAIN_RENDERING_EXT = 2;
+  static const XR_PERF_SETTINGS_SUB_DOMAIN_THERMAL_EXT = 3;
+}
+
+abstract class XrReferenceSpaceType {
+  XrReferenceSpaceType._();
+
+  static const XR_REFERENCE_SPACE_TYPE_VIEW = 1;
+  static const XR_REFERENCE_SPACE_TYPE_LOCAL = 2;
+  static const XR_REFERENCE_SPACE_TYPE_STAGE = 3;
+}
+
+/// Error and return codes
 abstract class XrResult {
   XrResult._();
+
   static const XR_SUCCESS = 0;
   static const XR_TIMEOUT_EXPIRED = 1;
   static const XR_SESSION_LOSS_PENDING = 3;
@@ -61,8 +212,44 @@ abstract class XrResult {
   static const XR_RESULT_MAX_ENUM = 0x7FFFFFFF;
 }
 
+abstract class XrSessionCreateFlagBits {
+  XrSessionCreateFlagBits._();
+}
+
+abstract class XrSessionState {
+  XrSessionState._();
+
+  static const XR_SESSION_STATE_UNKNOWN = 0;
+  static const XR_SESSION_STATE_IDLE = 1;
+  static const XR_SESSION_STATE_READY = 2;
+  static const XR_SESSION_STATE_SYNCHRONIZED = 3;
+  static const XR_SESSION_STATE_VISIBLE = 4;
+  static const XR_SESSION_STATE_FOCUSED = 5;
+  static const XR_SESSION_STATE_STOPPING = 6;
+  static const XR_SESSION_STATE_LOSS_PENDING = 7;
+  static const XR_SESSION_STATE_EXITING = 8;
+}
+
+abstract class XrSpaceLocationFlagBits {
+  XrSpaceLocationFlagBits._();
+
+  static const XR_SPACE_LOCATION_ORIENTATION_VALID_BIT = 1;
+  static const XR_SPACE_LOCATION_POSITION_VALID_BIT = 2;
+  static const XR_SPACE_LOCATION_ORIENTATION_TRACKED_BIT = 4;
+  static const XR_SPACE_LOCATION_POSITION_TRACKED_BIT = 8;
+}
+
+abstract class XrSpaceVelocityFlagBits {
+  XrSpaceVelocityFlagBits._();
+
+  static const XR_SPACE_VELOCITY_LINEAR_VALID_BIT = 1;
+  static const XR_SPACE_VELOCITY_ANGULAR_VALID_BIT = 2;
+}
+
+/// Structure type enumerant
 abstract class XrStructureType {
   XrStructureType._();
+
   static const XR_TYPE_UNKNOWN = 0;
   static const XR_TYPE_API_LAYER_PROPERTIES = 1;
   static const XR_TYPE_EXTENSION_PROPERTIES = 2;
@@ -153,4 +340,47 @@ abstract class XrStructureType {
   static const XR_TYPE_VIEW_CONFIGURATION_DEPTH_RANGE_EXT = 1000046000;
   static const XR_TYPE_VIEW_CONFIGURATION_VIEW_FOV_EPIC = 1000059000;
   static const XR_STRUCTURE_TYPE_MAX_ENUM = 0x7FFFFFFF;
+}
+
+abstract class XrSwapchainCreateFlagBits {
+  XrSwapchainCreateFlagBits._();
+
+  static const XR_SWAPCHAIN_CREATE_PROTECTED_CONTENT_BIT = 1;
+  static const XR_SWAPCHAIN_CREATE_STATIC_IMAGE_BIT = 2;
+}
+
+abstract class XrSwapchainUsageFlagBits {
+  XrSwapchainUsageFlagBits._();
+
+  static const XR_SWAPCHAIN_USAGE_COLOR_ATTACHMENT_BIT = 1;
+  static const XR_SWAPCHAIN_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT = 2;
+  static const XR_SWAPCHAIN_USAGE_UNORDERED_ACCESS_BIT = 4;
+  static const XR_SWAPCHAIN_USAGE_TRANSFER_SRC_BIT = 8;
+  static const XR_SWAPCHAIN_USAGE_TRANSFER_DST_BIT = 16;
+  static const XR_SWAPCHAIN_USAGE_SAMPLED_BIT = 32;
+  static const XR_SWAPCHAIN_USAGE_MUTABLE_FORMAT_BIT = 64;
+}
+
+abstract class XrViewConfigurationType {
+  XrViewConfigurationType._();
+
+  static const XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MONO = 1;
+  static const XR_VIEW_CONFIGURATION_TYPE_PRIMARY_STEREO = 2;
+}
+
+abstract class XrViewStateFlagBits {
+  XrViewStateFlagBits._();
+
+  static const XR_VIEW_STATE_ORIENTATION_VALID_BIT = 1;
+  static const XR_VIEW_STATE_POSITION_VALID_BIT = 2;
+  static const XR_VIEW_STATE_ORIENTATION_TRACKED_BIT = 4;
+  static const XR_VIEW_STATE_POSITION_TRACKED_BIT = 8;
+}
+
+abstract class XrVisibilityMaskTypeKHR {
+  XrVisibilityMaskTypeKHR._();
+
+  static const XR_VISIBILITY_MASK_TYPE_HIDDEN_TRIANGLE_MESH_KHR = 1;
+  static const XR_VISIBILITY_MASK_TYPE_VISIBLE_TRIANGLE_MESH_KHR = 2;
+  static const XR_VISIBILITY_MASK_TYPE_LINE_LOOP_KHR = 3;
 }
